@@ -68,7 +68,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Трансформация</b> анимирует объекты, которые есть и на этом слайде, и на предыдущем (скопируйте слайд, затем переместите объекты).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>Состояние</b> не участвует в переходах по стрелкам — зрители попадают в него, нажимая связанный объект. Объекты с одинаковыми id перетекают между состояниями.",
   "A deck needs at least one slide": "В презентации должен быть хотя бы один слайд",
-  "About bento/slides — version, updates, licenses": "О bento/slides — версия, обновления, лицензии",
+  "About nohumans slide — version, updates, licenses": "О nohumans slide — версия, обновления, лицензии",
   "Align": "Выравнивание",
   "Ambient": "Движение",
   "Angle": "Угол",

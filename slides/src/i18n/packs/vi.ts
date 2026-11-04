@@ -66,7 +66,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Biến hình</b> tạo chuyển động cho những đối tượng có mặt ở cả trang chiếu này lẫn trang trước (hãy sao chép một trang chiếu rồi di chuyển các thành phần).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>Trạng thái</b> bị ẩn khỏi luồng phím mũi tên — người xem đến đó bằng cách nhấp vào một đối tượng có liên kết. Các đối tượng dùng chung mã sẽ biến hình giữa các trạng thái.",
   "A deck needs at least one slide": "Bản trình bày cần ít nhất một trang chiếu",
-  "About bento/slides — version, updates, licenses": "Giới thiệu bento/slides — phiên bản, cập nhật, giấy phép",
+  "About nohumans slide — version, updates, licenses": "Giới thiệu nohumans slide — phiên bản, cập nhật, giấy phép",
   "Align": "Căn chỉnh",
   "Ambient": "Chuyển động nền",
   "Angle": "Góc",

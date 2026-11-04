@@ -67,7 +67,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Dönüşüm</b>, hem bu slaytta hem de bir öncekinde bulunan öğeleri canlandırır (bir slaydı kopyalayın, sonra öğeleri kaydırın).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>Durum</b>, ok tuşlarıyla ilerleyişte gizlidir — izleyiciler bağlantılı bir öğeye tıklayarak ulaşır. Ortak öğe kimlikleri durumlar arasında dönüşür.",
   "A deck needs at least one slide": "Bir sunuda en az bir slayt olmalı",
-  "About bento/slides — version, updates, licenses": "bento/slides hakkında — sürüm, güncellemeler, lisanslar",
+  "About nohumans slide — version, updates, licenses": "nohumans slide hakkında — sürüm, güncellemeler, lisanslar",
   "Align": "Hizala",
   "Ambient": "Sürekli hareket",
   "Angle": "Açı",

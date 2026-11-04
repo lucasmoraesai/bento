@@ -6,6 +6,7 @@
 import './styles.css'
 import { anim } from './anim'
 import { configureApp } from '../../kernel/src/app.ts'
+import { lsGet, lsSet } from '../../kernel/src/storage.ts'
 import { deckWindowTitle } from './wintitle'
 import { startTheme } from '../../kernel/src/theme.ts'
 import { startNetGuard } from '../../kernel/src/net.ts'
@@ -44,10 +45,24 @@ import { onlineTransport, startSharing, stopSharing, disconnectOnline, joinFromD
 // Tell the kernel who this app is — must precede any kernel module use
 // (window title suffix, save-picker label, update manifest + its `app` check).
 configureApp({
+  // `appId` is the PLATFORM id the signed channel verifies against (language
+  // pack indexes are signed with it) and is never shown to anyone. The
+  // user-visible identity is `appName`: window titles, save dialogs.
   appId: 'bento-slides',
-  appName: 'bento/slides',
-  manifestUrl: 'https://bento.page/releases/slides/manifest.json',
+  appName: 'nohumans slide',
+  // This deployment publishes no signed release channel. Pointing at the
+  // upstream manifest would let a bento release replace this shell — and its
+  // branding — on the next update, so the URL is our own origin. Nothing is
+  // published there: the launch check is defaulted off below, and the About
+  // dialog's manual check reports the server honestly if pressed.
+  manifestUrl: 'https://slides.nohumans.com.br/releases/slides/manifest.json',
 })
+
+// Follows from the manifest URL above: a check here can only ever fail, and a
+// failed launch check is a scary line in About for a product that is working
+// exactly as intended. Default it OFF once — an explicit choice already made
+// by the viewer (either way) is never overwritten.
+if (lsGet('bento-auto-check') === null) lsSet('bento-auto-check', 'off')
 
 // Every save writes a static rendering of page one into the shell, so file
 // managers thumbnail the deck instead of the boot splash (src/preview.ts).

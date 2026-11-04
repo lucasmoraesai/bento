@@ -69,7 +69,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>מורף</b> מנפיש אובייקטים שמופיעים גם בשקופית הזו וגם בקודמת (שכפלו שקופית ואז הזיזו דברים).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>מצב</b> מוסתר מניווט מקשי החצים — הצופים מגיעים אליו בלחיצה על אובייקט מקושר. אובייקטים בעלי מזהה משותף עוברים מורף בין המצבים.",
   "A deck needs at least one slide": "מצגת חייבת לכלול לפחות שקופית אחת",
-  "About bento/slides — version, updates, licenses": "אודות bento/slides — גרסה, עדכונים ורישיונות",
+  "About nohumans slide — version, updates, licenses": "אודות nohumans slide — גרסה, עדכונים ורישיונות",
   "Align": "יישור",
   "Ambient": "תנועה מתמשכת",
   "Angle": "זווית",

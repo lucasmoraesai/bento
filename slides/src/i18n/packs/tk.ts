@@ -95,7 +95,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Öwrülme</b> hem şu slaýdda, hem öňki slaýdda bar bolan elementleri janlandyrýar (slaýdy göçüriň, soňra zatlaryň ýerini üýtgediň).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>Ýagdaý</b> ok düwmeleri bilen geçişden gizlenýär — görüjiler oňa baglanan elemente basyp barýarlar. Paýlaşylan element kimlikleri ýagdaýlaryň arasynda öwrülýär.",
   "A deck needs at least one slide": "Prezentasiýada azyndan bir slaýd bolmaly",
-  "About bento/slides — version, updates, licenses": "bento/slides barada — wersiýa, täzelenmeler, ygtyýarnamalar",
+  "About nohumans slide — version, updates, licenses": "nohumans slide barada — wersiýa, täzelenmeler, ygtyýarnamalar",
   "Align": "Deňleşdir",
   "Ambient": "Fon hereketi",
   "Angle": "Burç",

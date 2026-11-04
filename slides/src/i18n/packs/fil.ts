@@ -85,7 +85,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Morph</b> — pinagagalaw nito ang mga element na lumalabas sa slide na ito at sa nauna rin (kopyahin ang isang slide, tapos igalaw ang mga bagay).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "Ang <b>state</b> ay nakatago sa daloy ng arrow key — naaabot ito ng manonood sa pag-click ng naka-link na element. Nagmo-morph ang mga element na magkapareho ang id sa pagitan ng mga state.",
   "A deck needs at least one slide": "Kailangan ng deck ng kahit isang slide",
-  "About bento/slides — version, updates, licenses": "Tungkol sa bento/slides — bersyon, mga update, mga lisensya",
+  "About nohumans slide — version, updates, licenses": "Tungkol sa nohumans slide — bersyon, mga update, mga lisensya",
   "Align": "Ihanay",
   "Ambient": "Ambient",
   "Angle": "Anggulo",

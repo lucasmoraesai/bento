@@ -76,7 +76,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>التحوّل</b> يُحرّك العناصر الموجودة في هذه الشريحة وفي السابقة معًا (انسخ شريحة ثم حرّك محتوياتها).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>الحالة</b> مخفية عن التنقّل بمفاتيح الأسهم — يصل إليها المشاهدون بالنقر على عنصر مرتبط. العناصر ذات المعرّفات المشتركة تتحوّل بين الحالات.",
   "A deck needs at least one slide": "لا بد أن يحتوي العرض التقديمي على شريحة واحدة على الأقل",
-  "About bento/slides — version, updates, licenses": "حول bento/slides — الإصدار والتحديثات والتراخيص",
+  "About nohumans slide — version, updates, licenses": "حول nohumans slide — الإصدار والتحديثات والتراخيص",
   "Align": "المحاذاة",
   "Ambient": "حركة مستمرة",
   "Angle": "الزاوية",

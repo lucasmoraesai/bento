@@ -64,7 +64,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Morph</b> animeert elementen die zowel op deze als op de vorige dia staan (kopieer een dia en verplaats daarna dingen).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "Een <b>status</b> valt buiten de pijltjesnavigatie — kijkers komen er via een gekoppeld element. Elementen met hetzelfde id morphen tussen statussen.",
   "A deck needs at least one slide": "Een presentatie heeft minstens één dia nodig",
-  "About bento/slides — version, updates, licenses": "Over bento/slides — versie, updates, licenties",
+  "About nohumans slide — version, updates, licenses": "Over nohumans slide — versie, updates, licenties",
   "Align": "Uitlijnen",
   "Ambient": "Doorlopend",
   "Angle": "Hoek",

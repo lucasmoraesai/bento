@@ -70,7 +70,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Morph</b> animerer elementer som finnes både på dette og det forrige lysbildet (kopier et lysbilde, og flytt så ting rundt).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "En <b>tilstand</b> er skjult fra piltastflyten — seerne når den ved å klikke på et lenket element. Felles element-id-er morfer mellom tilstander.",
   "A deck needs at least one slide": "En presentasjon må ha minst ett lysbilde",
-  "About bento/slides — version, updates, licenses": "Om bento/slides — versjon, oppdateringer, lisenser",
+  "About nohumans slide — version, updates, licenses": "Om nohumans slide — versjon, oppdateringer, lisenser",
   "Align": "Juster",
   "Ambient": "Ambient",
   "Angle": "Vinkel",

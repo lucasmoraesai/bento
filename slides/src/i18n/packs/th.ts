@@ -70,7 +70,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>มอร์ฟ</b> จะทำแอนิเมชันให้องค์ประกอบที่มีอยู่ทั้งบนสไลด์นี้และสไลด์ก่อนหน้า (ลองทำสำเนาสไลด์แล้วย้ายตำแหน่งดู)",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>สถานะ</b> จะไม่อยู่ในลำดับการกดปุ่มลูกศร — ผู้ชมเข้าถึงได้ด้วยการคลิกองค์ประกอบที่ลิงก์ไว้ องค์ประกอบที่ใช้ id ร่วมกันจะมอร์ฟระหว่างสถานะ",
   "A deck needs at least one slide": "งานนำเสนอต้องมีสไลด์อย่างน้อย 1 แผ่น",
-  "About bento/slides — version, updates, licenses": "เกี่ยวกับ bento/slides — เวอร์ชัน อัปเดต สัญญาอนุญาต",
+  "About nohumans slide — version, updates, licenses": "เกี่ยวกับ nohumans slide — เวอร์ชัน อัปเดต สัญญาอนุญาต",
   "Align": "จัดแนว",
   "Ambient": "ต่อเนื่อง",
   "Angle": "มุม",

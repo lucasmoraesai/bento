@@ -331,15 +331,15 @@ export class Editor {
     const logo = document.createElement('button')
     logo.type = 'button'
     logo.className = 'ed-logo'
-    logo.setAttribute('aria-label', t('About bento/slides — version, updates, licenses'))
+    logo.setAttribute('aria-label', t('About nohumans slide — version, updates, licenses'))
     logo.innerHTML =
       `<svg class="ed-logo-mark" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true">` +
-      `<rect width="32" height="32" rx="7" fill="#16273E"/>` +
-      `<rect x="5" y="5" width="7" height="22" rx="2.5" fill="#5E7699"/>` +
-      `<rect x="14" y="5" width="13" height="10" rx="2.5" fill="#FF9E8A"/>` +
-      `<rect x="14" y="17" width="13" height="10" rx="2.5" fill="#F0EBE0"/>` +
-      `</svg> <b>bento<span style="color:#FF9E8A">/</span>slides</b>`
-    logo.title = t('About bento/slides — version, updates, licenses')
+      `<rect width="32" height="32" rx="7" fill="#0A0A0A"/>` +
+      `<rect x="5" y="5" width="7" height="22" rx="2.5" fill="#00E5FF"/>` +
+      `<rect x="14" y="5" width="13" height="10" rx="2.5" fill="#FF2EC4"/>` +
+      `<rect x="14" y="17" width="13" height="10" rx="2.5" fill="#A3FF12"/>` +
+      `</svg> <b>nohumans <span style="color:#00E5FF">slide</span></b>`
+    logo.title = t('About nohumans slide — version, updates, licenses')
     logo.addEventListener('click', () => this.openAbout())
     const title = document.createElement('input')
     title.className = 'ed-title'
@@ -3707,26 +3707,23 @@ export class Editor {
     const head = div('ed-about-head')
     // The logo/wordmark links home (new tab) — a gentle route back to the site.
     head.innerHTML =
-      `<a class="ed-about-logo" href="https://bento.page" target="_blank" rel="noopener">` +
+      `<a class="ed-about-logo" href="https://slides.nohumans.com.br" target="_blank" rel="noopener">` +
       `<svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">` +
-      `<rect width="32" height="32" rx="7" fill="#16273E"/>` +
-      `<rect x="5" y="5" width="7" height="22" rx="2.5" fill="#5E7699"/>` +
-      `<rect x="14" y="5" width="13" height="10" rx="2.5" fill="#FF9E8A"/>` +
-      `<rect x="14" y="17" width="13" height="10" rx="2.5" fill="#F0EBE0"/>` +
-      `</svg><div><b>bento<span style="color:#FF9E8A">/</span>slides</b><span>v${APP_VERSION} · format v${FORMAT_VERSION}</span></div>` +
+      `<rect width="32" height="32" rx="7" fill="#0A0A0A"/>` +
+      `<rect x="5" y="5" width="7" height="22" rx="2.5" fill="#00E5FF"/>` +
+      `<rect x="14" y="5" width="13" height="10" rx="2.5" fill="#FF2EC4"/>` +
+      `<rect x="14" y="17" width="13" height="10" rx="2.5" fill="#A3FF12"/>` +
+      `</svg><div><b>nohumans <span style="color:#00E5FF">slide</span></b><span>v${APP_VERSION} · format v${FORMAT_VERSION}</span></div>` +
       `</a>`
-    head.querySelector('a')?.setAttribute('title', t('Visit bento.page (opens in a new tab)'))
+    // A URL is the same string in every language — no catalog entry for it.
+    head.querySelector('a')?.setAttribute('title', 'slides.nohumans.com.br')
     box.appendChild(head)
 
-    // Engagement nudge back to the site (templates / gallery / agent guide).
+    // Brand footer. Deliberately untranslated: a domain and a repository name.
     const promo = div('ed-about-promo')
-    promo.innerHTML = t(
-      'New to Bento? Find templates, the gallery and the AI editing guide at {home} — or ⭐ it on {gh}.',
-      {
-        home: '<a href="https://bento.page" target="_blank" rel="noopener">bento.page</a>',
-        gh: '<a href="https://github.com/nyblnet/bento" target="_blank" rel="noopener">GitHub</a>',
-      },
-    )
+    promo.innerHTML =
+      `<a href="https://slides.nohumans.com.br" target="_blank" rel="noopener">slides.nohumans.com.br</a>` +
+      ` · <a href="https://github.com/lucasmoraesai/bento" target="_blank" rel="noopener">github.com/lucasmoraesai/bento</a>`
     box.appendChild(promo)
 
     const status = div('ed-about-status')

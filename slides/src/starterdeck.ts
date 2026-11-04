@@ -313,9 +313,8 @@ const DOTS_PAPER =
 export function starterDoc(): BentoDoc {
   const doc = newDoc()
   // The DECK's title, not the app's — it reads as a document name (window title,
-  // suggested filename), so it stays in title case. The lowercase `bento/slides`
-  // wordmark is app chrome and is unaffected.
-  doc.title = 'Bento Slides Showcase'
+  // suggested filename), so it carries the product name as people write it.
+  doc.title = 'nohumans slide'
   doc.theme.fontFamily = BODY
   doc.theme.accent = PEACH
   // new charts (＋ Chart, table→chart) inherit the deck's midnight-&-peach family
@@ -413,7 +412,7 @@ export function starterDoc(): BentoDoc {
         shape('rect', { id: T_B, x: 886, y: 206, w: 84, h: 248, radius: 16, fill: STEEL, fillGradient: GRAD_STEEL, fx: { enter: 'fade-up', order: 2 } }),
         shape('rect', { id: T_A, x: 986, y: 206, w: 148, h: 112, radius: 16, fill: PEACH, fillGradient: GRAD_PEACH, fx: { enter: 'fade-up', order: 3 } }),
         shape('rect', { id: T_C, x: 986, y: 334, w: 148, h: 120, radius: 16, fill: TILE_PAPER, fillGradient: GRAD_PAPER, fx: { enter: 'fade-up', order: 4 } }),
-        kicker('BENTO/SLIDES', { fx: { enter: 'fade-up', order: 0 } }),
+        kicker('NOHUMANS/SLIDE', { fx: { enter: 'fade-up', order: 0 } }),
         shape('rect', { x: 96, y: 86, w: 1088, h: 1.5, radius: 0, fill: 'rgba(255,255,255,0.12)', fx: { enter: 'fade', order: 0 } }),
         title('The file<br>is the<br>software.', {
           x: 88, y: 122, w: 660, h: 372, fontSize: 112, lineHeight: 1.02, color: '#FFFFFF',
@@ -713,7 +712,7 @@ export function starterDoc(): BentoDoc {
     slide({
       transition: 'morph',
       notes:
-        'async/await on the right, the quadratic formula on the left \u2014 and every symbol that survived the rewrite kept its identity the whole way. This is what a walkthrough is in Bento: duplicate the slide, edit the content, and the transition explains the change for you. No recording, no screenshots.',
+        'async/await on the right, the quadratic formula on the left \u2014 and every symbol that survived the rewrite kept its identity the whole way. This is what a walkthrough is in nohumans slide: duplicate the slide, edit the content, and the transition explains the change for you. No recording, no screenshots.',
       elements: [
         grain(),
         glow(20, [
@@ -1217,7 +1216,7 @@ export function starterDoc(): BentoDoc {
     slide({
       notes:
         'The cast reassembles into the logo. Press Esc — this deck is already your copy of the app: ' +
-        'edit it, save it, send it. bento.page has the latest build and the story.',
+        'edit it, save it, send it. slides.nohumans.com.br has the latest build and the story.',
       elements: [
         grain(),
         glow(0, [
@@ -1265,9 +1264,9 @@ export function starterDoc(): BentoDoc {
           html: 'Press <b>Esc</b> — this deck is already your copy of the editor.',
           fontSize: 17, fontWeight: 500, color: MIST, align: 'center',
         }),
-        shape('rect', { x: 562, y: 644, w: 156, h: 44, radius: 22, fill: PEACH, fillGradient: GRAD_PEACH, shadow: { y: 10, blur: 26, color: 'rgba(0,0,0,0.4)' } }),
+        shape('rect', { x: 532, y: 644, w: 216, h: 44, radius: 22, fill: PEACH, fillGradient: GRAD_PEACH, shadow: { y: 10, blur: 26, color: 'rgba(0,0,0,0.4)' } }),
         text({
-          x: 562, y: 655, w: 156, h: 24, html: 'bento.page', fontSize: 16, fontWeight: 700,
+          x: 532, y: 655, w: 216, h: 24, html: 'nohumans slide', fontSize: 16, fontWeight: 700,
           color: INK, align: 'center',
         }),
       ],

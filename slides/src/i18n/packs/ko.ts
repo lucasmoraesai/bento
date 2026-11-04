@@ -52,7 +52,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>모프</b>는 이 슬라이드와 이전 슬라이드에 모두 있는 요소를 애니메이션합니다(슬라이드를 복사한 뒤 요소를 옮겨 보세요).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>상태</b>는 화살표 키 흐름에서 숨겨집니다 — 연결된 요소를 클릭해야 도달합니다. 공유된 요소 id는 상태 간에 모프됩니다.",
   "A deck needs at least one slide": "프레젠테이션에는 슬라이드가 최소 하나 필요합니다",
-  "About bento/slides — version, updates, licenses": "bento/slides 정보 — 버전, 업데이트, 라이선스",
+  "About nohumans slide — version, updates, licenses": "nohumans slide 정보 — 버전, 업데이트, 라이선스",
   "Align": "정렬",
   "Ambient": "앰비언트",
   "Angle": "각도",

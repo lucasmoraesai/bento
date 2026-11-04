@@ -73,7 +73,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Muunto</b> animoi objektit, jotka ovat sekä tässä että edellisessä diassa (kopioi dia ja siirtele sitten sisältöä).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "<b>Tila</b> on piilossa nuolinäppäinten kulusta — katsojat pääsevät siihen napsauttamalla linkitettyä objektia. Samat objektitunnukset muuntuvat tilojen välillä.",
   "A deck needs at least one slide": "Esityksessä on oltava vähintään yksi dia",
-  "About bento/slides — version, updates, licenses": "Tietoja bento/slides -sovelluksesta — versio, päivitykset, lisenssit",
+  "About nohumans slide — version, updates, licenses": "Tietoja nohumans slide -sovelluksesta — versio, päivitykset, lisenssit",
   "Align": "Tasaa",
   "Ambient": "Jatkuva liike",
   "Angle": "Kulma",

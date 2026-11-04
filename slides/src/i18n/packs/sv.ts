@@ -65,7 +65,7 @@ export const strings: Catalog = {
   "<b>Morph</b> animates elements that appear on both this slide and the previous one (copy a slide, then move things around).": "<b>Morf</b> animerar objekt som finns både på den här bilden och den föregående (kopiera en bild och flytta sedan runt innehållet).",
   "A <b>state</b> is hidden from arrow-key flow — viewers reach it by clicking a linked element. Shared element ids morph between states.": "Ett <b>läge</b> hoppas över när du bläddrar med piltangenterna — tittarna når det genom att klicka på ett länkat objekt. Objekt med samma id morfar mellan lägen.",
   "A deck needs at least one slide": "En presentation måste ha minst en bild",
-  "About bento/slides — version, updates, licenses": "Om bento/slides — version, uppdateringar, licenser",
+  "About nohumans slide — version, updates, licenses": "Om nohumans slide — version, uppdateringar, licenser",
   "Align": "Justera",
   "Ambient": "Kontinuerlig",
   "Angle": "Vinkel",
