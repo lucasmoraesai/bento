@@ -1,0 +1,102 @@
+{
+  "compact": true,
+  "title": "Agência por assinatura",
+  "size": { "width": 1280, "height": 720 },
+  "theme": {
+    "fontFamily": "'Instrument Sans', -apple-system, 'Segoe UI', Helvetica, sans-serif",
+    "headingFamily": "'Instrument Sans', -apple-system, 'Segoe UI', Helvetica, sans-serif",
+    "background": "#0A0A0A"
+  },
+  "fonts": [
+    { "family": "Instrument Sans", "asset": "builtin:instrument-sans", "weight": "100 900" }
+  ],
+  "slides": [
+    {
+      "id": "nh-1",
+      "background": "#0A0A0A",
+      "elements": [
+        { "type": "text", "x": 88, "y": 72, "w": 700, "h": 26, "html": "NOHUMANS · SANTOS", "fontSize": 13, "fontWeight": 700, "letterSpacing": 4, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 88, "y": 140, "w": 840, "h": "auto", "html": "Sua agência<br>por assinatura.", "fontSize": 96, "fontWeight": 900, "lineHeight": 1.02, "align": "left", "color": "#FFFFFF" },
+        { "type": "text", "x": 88, "y": 410, "w": 600, "h": "auto", "html": "Automação, marketing e software.<br>Uma demanda por vez, entregue em até 48h.", "fontSize": 24, "fontWeight": 500, "lineHeight": 1.5, "align": "left", "color": "#C7CCD3" },
+        { "type": "shape", "shape": "rect", "x": 966, "y": 150, "w": 26, "h": 372, "radius": 13, "fill": "#00E5FF" },
+        { "type": "shape", "shape": "rect", "x": 1004, "y": 150, "w": 120, "h": 176, "radius": 20, "fill": "#FF2EC4" },
+        { "type": "shape", "shape": "rect", "x": 1004, "y": 346, "w": 120, "h": 176, "radius": 20, "fill": "#A3FF12" },
+        { "type": "shape", "shape": "rect", "x": 88, "y": 620, "w": 1104, "h": 1.5, "radius": 0, "fill": "rgba(255,255,255,0.14)" },
+        { "type": "text", "x": 88, "y": 646, "w": 420, "h": 24, "html": "nohumans.com.br", "fontSize": 15, "fontWeight": 700, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 508, "y": 646, "w": 684, "h": 24, "html": "R$ 6.000/mês · horas ilimitadas · cancele quando quiser", "fontSize": 15, "fontWeight": 500, "align": "right", "color": "#9AA0A8" }
+      ]
+    },
+    {
+      "id": "nh-2",
+      "background": "#0A0A0A",
+      "elements": [
+        { "type": "text", "x": 88, "y": 72, "w": 700, "h": 26, "html": "COMO FUNCIONA", "fontSize": 13, "fontWeight": 700, "letterSpacing": 4, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 88, "y": 118, "w": 1000, "h": "auto", "html": "Você pede. A gente entrega.", "fontSize": 58, "fontWeight": 900, "lineHeight": 1.1, "align": "left", "color": "#FFFFFF" },
+        { "type": "shape", "shape": "rect", "x": 88, "y": 268, "w": 264, "h": 316, "radius": 20, "fill": "#141414", "stroke": "rgba(255,255,255,0.10)", "strokeWidth": 1 },
+        { "type": "text", "x": 116, "y": 296, "w": 208, "h": 20, "html": "01", "fontSize": 13, "fontWeight": 700, "letterSpacing": 3, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 116, "y": 330, "w": 208, "h": "auto", "html": "Contrata", "fontSize": 22, "fontWeight": 700, "align": "left", "color": "#FFFFFF" },
+        { "type": "text", "x": 116, "y": 378, "w": 208, "h": "auto", "html": "Plano ou departamento. Mensal. Pausa ou cancela quando quiser.", "fontSize": 15, "fontWeight": 500, "lineHeight": 1.55, "align": "left", "color": "#A8AEB6" },
+        { "type": "shape", "shape": "rect", "x": 368, "y": 268, "w": 264, "h": 316, "radius": 20, "fill": "#141414", "stroke": "rgba(255,255,255,0.10)", "strokeWidth": 1 },
+        { "type": "text", "x": 396, "y": 296, "w": 208, "h": 20, "html": "02", "fontSize": 13, "fontWeight": 700, "letterSpacing": 3, "align": "left", "color": "#FF2EC4" },
+        { "type": "text", "x": 396, "y": 330, "w": 208, "h": "auto", "html": "Criamos o grupo", "fontSize": 22, "fontWeight": 700, "align": "left", "color": "#FFFFFF" },
+        { "type": "text", "x": 396, "y": 378, "w": 208, "h": "auto", "html": "Depois do pagamento, kickoff: configuramos o WhatsApp e entendemos a demanda.", "fontSize": 15, "fontWeight": 500, "lineHeight": 1.55, "align": "left", "color": "#A8AEB6" },
+        { "type": "shape", "shape": "rect", "x": 648, "y": 268, "w": 264, "h": 316, "radius": 20, "fill": "#141414", "stroke": "rgba(255,255,255,0.10)", "strokeWidth": 1 },
+        { "type": "text", "x": 676, "y": 296, "w": 208, "h": 20, "html": "03", "fontSize": 13, "fontWeight": 700, "letterSpacing": 3, "align": "left", "color": "#A3FF12" },
+        { "type": "text", "x": 676, "y": 330, "w": 208, "h": "auto", "html": "Você pede", "fontSize": 22, "fontWeight": 700, "align": "left", "color": "#FFFFFF" },
+        { "type": "text", "x": 676, "y": 378, "w": 208, "h": "auto", "html": "Manda no grupo. Uma demanda ativa por vez, com CS dedicado e suporte VIP.", "fontSize": 15, "fontWeight": 500, "lineHeight": 1.55, "align": "left", "color": "#A8AEB6" },
+        { "type": "shape", "shape": "rect", "x": 928, "y": 268, "w": 264, "h": 316, "radius": 20, "fill": "#141414", "stroke": "rgba(255,255,255,0.10)", "strokeWidth": 1 },
+        { "type": "text", "x": 956, "y": 296, "w": 208, "h": 20, "html": "04", "fontSize": 13, "fontWeight": 700, "letterSpacing": 3, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 956, "y": 330, "w": 208, "h": "auto", "html": "Entregamos", "fontSize": 22, "fontWeight": 700, "align": "left", "color": "#FFFFFF" },
+        { "type": "text", "x": 956, "y": 378, "w": 208, "h": "auto", "html": "Prazo de até 48h. Reunião mensal no departamento, semanal no ilimitado.", "fontSize": 15, "fontWeight": 500, "lineHeight": 1.55, "align": "left", "color": "#A8AEB6" }
+      ]
+    },
+    {
+      "id": "nh-3",
+      "background": "#0A0A0A",
+      "elements": [
+        { "type": "text", "x": 88, "y": 72, "w": 700, "h": 26, "html": "O QUE ESTÁ INCLUSO", "fontSize": 13, "fontWeight": 700, "letterSpacing": 4, "align": "left", "color": "#FF2EC4" },
+        { "type": "text", "x": 88, "y": 118, "w": 1000, "h": "auto", "html": "Três agências.<br>Uma assinatura.", "fontSize": 58, "fontWeight": 900, "lineHeight": 1.08, "align": "left", "color": "#FFFFFF" },
+        { "type": "shape", "shape": "rect", "x": 88, "y": 350, "w": 1.5, "h": 260, "radius": 0, "fill": "rgba(255,255,255,0.12)" },
+        { "type": "shape", "shape": "rect", "x": 456, "y": 350, "w": 1.5, "h": 260, "radius": 0, "fill": "rgba(255,255,255,0.12)" },
+        { "type": "shape", "shape": "rect", "x": 824, "y": 350, "w": 1.5, "h": 260, "radius": 0, "fill": "rgba(255,255,255,0.12)" },
+        { "type": "text", "x": 88, "y": 350, "w": 320, "h": 28, "html": "AUTOMAÇÃO E IA", "fontSize": 15, "fontWeight": 700, "letterSpacing": 2, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 88, "y": 390, "w": 320, "h": "auto", "html": "Automação de processos<br>Integrações (CRM, ERP, APIs)<br>Robôs (RPA)<br>Agentes de IA<br>Chatbots &amp; atendimento<br>Dashboards e análise de dados", "fontSize": 16, "fontWeight": 500, "lineHeight": 1.95, "align": "left", "color": "#C7CCD3" },
+        { "type": "text", "x": 456, "y": 350, "w": 320, "h": 28, "html": "MARKETING", "fontSize": 15, "fontWeight": 700, "letterSpacing": 2, "align": "left", "color": "#FF2EC4" },
+        { "type": "text", "x": 456, "y": 390, "w": 320, "h": "auto", "html": "Campanhas de performance<br>Conteúdo &amp; copy<br>Criativos &amp; anúncios<br>SEO &amp; autoridade<br>Social media<br>Funil &amp; CRM", "fontSize": 16, "fontWeight": 500, "lineHeight": 1.95, "align": "left", "color": "#C7CCD3" },
+        { "type": "text", "x": 824, "y": 350, "w": 340, "h": 28, "html": "SOFTWARE E UX", "fontSize": 15, "fontWeight": 700, "letterSpacing": 2, "align": "left", "color": "#A3FF12" },
+        { "type": "text", "x": 824, "y": 390, "w": 340, "h": "auto", "html": "Aplicações web<br>Sistemas sob medida<br>Integrações &amp; APIs<br>Landing pages<br>Design de interface<br>Manutenção &amp; evolução", "fontSize": 16, "fontWeight": 500, "lineHeight": 1.95, "align": "left", "color": "#C7CCD3" }
+      ]
+    },
+    {
+      "id": "nh-4",
+      "background": "#0A0A0A",
+      "elements": [
+        { "type": "text", "x": 88, "y": 72, "w": 700, "h": 26, "html": "UM PREÇO", "fontSize": 13, "fontWeight": 700, "letterSpacing": 4, "align": "left", "color": "#A3FF12" },
+        { "type": "text", "x": 88, "y": 132, "w": 620, "h": "auto", "html": "R$ 6.000", "fontSize": 118, "fontWeight": 900, "lineHeight": 1.0, "align": "left", "color": "#FFFFFF" },
+        { "type": "text", "x": 96, "y": 272, "w": 300, "h": "auto", "html": "por mês", "fontSize": 26, "fontWeight": 600, "align": "left", "color": "#A3FF12" },
+        { "type": "text", "x": 88, "y": 330, "w": 540, "h": "auto", "html": "Uma assinatura, todas as agências e departamentos. Horas ilimitadas, uma demanda ativa por vez.", "fontSize": 20, "fontWeight": 500, "lineHeight": 1.55, "align": "left", "color": "#C7CCD3" },
+        { "type": "shape", "shape": "rect", "x": 700, "y": 132, "w": 492, "h": 470, "radius": 24, "fill": "#141414", "stroke": "rgba(255,255,255,0.10)", "strokeWidth": 1 },
+        { "type": "text", "x": 732, "y": 164, "w": 428, "h": 26, "html": "TUDO INCLUSO", "fontSize": 13, "fontWeight": 700, "letterSpacing": 3, "align": "left", "color": "#9AA0A8" },
+        { "type": "text", "x": 732, "y": 208, "w": 428, "h": "auto", "html": "Todas as agências<br>Horas ilimitadas, uma demanda por vez<br>Entrega em até 48h<br>Setup e kickoff gratuitos<br>CS dedicado e suporte VIP<br>Pausa ou cancelamento quando quiser", "fontSize": 17, "fontWeight": 500, "lineHeight": 2.0, "align": "left", "color": "#FFFFFF" },
+        { "type": "shape", "shape": "rect", "x": 732, "y": 520, "w": 300, "h": 52, "radius": 26, "fill": "#00E5FF" },
+        { "type": "text", "x": 732, "y": 535, "w": 300, "h": 24, "html": "Agendar diagnóstico", "fontSize": 17, "fontWeight": 700, "align": "center", "color": "#0A0A0A" },
+        { "type": "text", "x": 88, "y": 646, "w": 1104, "h": 24, "html": "Sem tier, sem pacote, sem letra miúda.", "fontSize": 15, "fontWeight": 500, "align": "left", "color": "#9AA0A8" }
+      ]
+    },
+    {
+      "id": "nh-5",
+      "background": "#0A0A0A",
+      "elements": [
+        { "type": "text", "x": 88, "y": 72, "w": 700, "h": 26, "html": "PRÓXIMO PASSO", "fontSize": 13, "fontWeight": 700, "letterSpacing": 4, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 88, "y": 150, "w": 1020, "h": "auto", "html": "Agende o diagnóstico.", "fontSize": 84, "fontWeight": 900, "lineHeight": 1.05, "align": "left", "color": "#FFFFFF" },
+        { "type": "text", "x": 88, "y": 280, "w": 640, "h": "auto", "html": "15 minutos, no seu horário. A gente olha sua operação e volta com o que dá para automatizar primeiro.", "fontSize": 22, "fontWeight": 500, "lineHeight": 1.55, "align": "left", "color": "#C7CCD3" },
+        { "type": "shape", "shape": "rect", "x": 88, "y": 420, "w": 1104, "h": 1.5, "radius": 0, "fill": "rgba(255,255,255,0.14)" },
+        { "type": "text", "x": 88, "y": 452, "w": 620, "h": "auto", "html": "nohumans.com.br/santos/diagnostico-15-min", "fontSize": 26, "fontWeight": 700, "align": "left", "color": "#00E5FF" },
+        { "type": "text", "x": 88, "y": 512, "w": 620, "h": "auto", "html": "no humans · Santos · automação, marketing e software por assinatura", "fontSize": 16, "fontWeight": 500, "align": "left", "color": "#9AA0A8" },
+        { "type": "shape", "shape": "rect", "x": 1004, "y": 452, "w": 26, "h": 120, "radius": 13, "fill": "#FF2EC4" },
+        { "type": "shape", "shape": "rect", "x": 1042, "y": 452, "w": 82, "h": 56, "radius": 14, "fill": "#A3FF12" },
+        { "type": "shape", "shape": "rect", "x": 1042, "y": 516, "w": 82, "h": 56, "radius": 14, "fill": "#00E5FF" }
+      ]
+    }
+  ]
+}

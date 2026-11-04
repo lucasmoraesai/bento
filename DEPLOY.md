@@ -36,6 +36,32 @@ Como não há canal assinado, a checagem automática de atualização nasce
 **desligada** (só quando a preferência nunca foi tocada) para não exibir um erro
 de servidor inexistente em *Sobre*.
 
+## O deck que abre no site
+
+Quem entra em `slides.nohumans.com.br` cai direto no deck da nohumans, não no
+showcase do upstream. O deck é *dado dentro do shell*: o bloco
+`#bento-doc` de `slides/index.html` carrega o documento, e o app abre com ele
+(bloco vazio = o starter deck de fábrica).
+
+Tudo o que gera esse documento está em `nohumans/`:
+
+| Arquivo | Papel |
+|---|---|
+| `nohumans/deck.compact.json` | **a fonte**: o deck na forma compacta de autoria (campos default omitidos, `h: "auto"`, ids gerados) |
+| `nohumans/build-doc.js` | carrega o compacto no shell construído, imprime o *load report* (`dropped`, `findings`), grava `deck.full.json` — **sem `collab`**, porque um deck público não pode carregar as chaves da sessão |
+| `nohumans/deck.full.json` | o documento completo, derivado (é o que vai para o bloco) |
+| `nohumans/inject.mjs` | escreve o JSON no bloco `#bento-doc` de `slides/index.html`, escapando `<` como `\u003c` (regra do splice: nunca um `</script>` literal) |
+| `nohumans/check-built.cjs` | confere o shell **construído**: título, nº de slides, `collab`, fontes, primeiro slide |
+| `nohumans/verify.cjs <url>` | abre a URL num Chrome headless e diz com que deck ela realmente acorda (+ screenshot) |
+
+Editar o deck é: mexer no `deck.compact.json` → `node nohumans/build-doc.js` →
+`node nohumans/inject.mjs` → `cd slides && npx vite build --outDir dist-single`
+→ commit. O `bento-check` do upstream (`node scripts/bento-check.mjs`) também
+valida o resultado; o `validate()` do runtime já sai limpo (0 erros, 0 avisos),
+e as duas infos que restam são esperadas: as chaves de sessão removidas na
+gravação e a fonte Instrument Sans, que é a face embutida no shell e por isso é
+declarada em `fonts` em vez de carregar bytes.
+
 ## Build na Vercel
 
 O app vive em `slides/` e o artefato publicado é **um único HTML** (o próprio
