@@ -99,14 +99,11 @@ function unlockPage(from: string, failed: boolean): string {
        background:#0a0a0a;color:#ededed;
        font:400 16px/1.5 'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
   main{width:min(360px,100%)}
-  .word{display:flex;align-items:center;gap:12px;margin:0 0 34px}
-  .mark{display:grid;grid-template-columns:10px 1fr;grid-template-rows:22px 22px;gap:4px;width:26px;height:48px}
-  .mark i{border-radius:5px}
-  .m1{grid-row:1/3;background:#00e5ff}
-  .m2{background:#ff2ec4}
-  .m3{background:#a3ff12}
-  .name{font-weight:700;letter-spacing:-.01em;font-size:17px}
-  .name span{color:#00e5ff}
+  .word{display:flex;align-items:center;gap:11px;margin:0 0 34px}
+  /* the site's mark: a dashed ring (see agenciadeia.tech/logo.svg) */
+  .mark{display:block;width:26px;height:26px;flex:none}
+  .name{font-weight:600;letter-spacing:-.02em;font-size:16px}
+  .name span{color:#9aa0a8;font-weight:600}
   h1{font-size:26px;line-height:1.15;font-weight:800;letter-spacing:-.02em;margin:0 0 8px}
   p{margin:0 0 24px;color:#9aa0a8;font-size:14px}
   label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#9aa0a8;margin:0 0 8px}
@@ -123,7 +120,7 @@ function unlockPage(from: string, failed: boolean): string {
 <body>
 <main>
   <div class="word">
-    <span class="mark" aria-hidden="true"><i class="m1"></i><i class="m2"></i><i class="m3"></i></span>
+    <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="10" stroke="#ededed" stroke-width="1.5" stroke-dasharray="52 10" stroke-linecap="round" transform="rotate(-40 16 16)" /></svg>
     <span class="name">nohumans <span>slide</span></span>
   </div>
   <h1>Acesso restrito.</h1>

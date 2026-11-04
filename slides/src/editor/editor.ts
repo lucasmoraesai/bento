@@ -332,13 +332,12 @@ export class Editor {
     logo.type = 'button'
     logo.className = 'ed-logo'
     logo.setAttribute('aria-label', t('About nohumans slide — version, updates, licenses'))
+    // The brand mark is the site's own: a dashed ring (agenciadeia.tech/logo.svg
+    // is the square favicon variant). `currentColor` so it reads on the bar's ink.
     logo.innerHTML =
-      `<svg class="ed-logo-mark" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true">` +
-      `<rect width="32" height="32" rx="7" fill="#0A0A0A"/>` +
-      `<rect x="5" y="5" width="7" height="22" rx="2.5" fill="#00E5FF"/>` +
-      `<rect x="14" y="5" width="13" height="10" rx="2.5" fill="#FF2EC4"/>` +
-      `<rect x="14" y="17" width="13" height="10" rx="2.5" fill="#A3FF12"/>` +
-      `</svg> <b>nohumans <span style="color:#00E5FF">slide</span></b>`
+      `<svg class="ed-logo-mark" viewBox="0 0 32 32" width="20" height="20" fill="none" aria-hidden="true">` +
+      `<circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.6" stroke-dasharray="52 10" stroke-linecap="round" transform="rotate(-40 16 16)"/>` +
+      `</svg> <b>nohumans <span style="color:var(--muted);font-weight:600">slide</span></b>`
     logo.title = t('About nohumans slide — version, updates, licenses')
     logo.addEventListener('click', () => this.openAbout())
     const title = document.createElement('input')
@@ -3708,12 +3707,9 @@ export class Editor {
     // The logo/wordmark links home (new tab) — a gentle route back to the site.
     head.innerHTML =
       `<a class="ed-about-logo" href="https://slides.nohumans.com.br" target="_blank" rel="noopener">` +
-      `<svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">` +
-      `<rect width="32" height="32" rx="7" fill="#0A0A0A"/>` +
-      `<rect x="5" y="5" width="7" height="22" rx="2.5" fill="#00E5FF"/>` +
-      `<rect x="14" y="5" width="13" height="10" rx="2.5" fill="#FF2EC4"/>` +
-      `<rect x="14" y="17" width="13" height="10" rx="2.5" fill="#A3FF12"/>` +
-      `</svg><div><b>nohumans <span style="color:#00E5FF">slide</span></b><span>v${APP_VERSION} · format v${FORMAT_VERSION}</span></div>` +
+      `<svg viewBox="0 0 32 32" width="28" height="28" fill="none" aria-hidden="true">` +
+      `<circle cx="16" cy="16" r="10" stroke="#ededed" stroke-width="1.5" stroke-dasharray="52 10" stroke-linecap="round" transform="rotate(-40 16 16)"/>` +
+      `</svg><div><b>nohumans <span style="color:#9aa0a8;font-weight:600">slide</span></b><span>v${APP_VERSION} · format v${FORMAT_VERSION}</span></div>` +
       `</a>`
     // A URL is the same string in every language — no catalog entry for it.
     head.querySelector('a')?.setAttribute('title', 'slides.nohumans.com.br')
