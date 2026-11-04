@@ -35,7 +35,7 @@ const mint = (claims) => {
   const anon = await fetch(`${BASE}/`, { redirect: 'manual' });
   const location = anon.headers.get('location') || '';
   ok(anon.status === 302, `sem cookie → 302 (veio ${anon.status})`);
-  ok(location.startsWith('https://work.nohumans.com.br/auth/slides'), `redirect vai para o work (${location.slice(0, 80)})`);
+  ok(location.startsWith('https://work.nohumans.com.br/slides-sso'), `redirect vai para o work (${location.slice(0, 80)})`);
 
   // 2. handshake token
   const now = Math.floor(Date.now() / 1000);
