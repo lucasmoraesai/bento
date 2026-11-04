@@ -78,18 +78,22 @@ login próprio: quem decide é a sessão do work.
 O handshake tem três pernas e nenhuma leitura de banco do lado do deck:
 
 1. sem cookie → `middleware.ts` manda o browser para
-   `https://work.nohumans.com.br/auth/slides?next=<aqui mesmo>`
-2. essa rota (no repo `nohumans-work`, `src/app/auth/slides/route.ts`) confere a
+   `https://work.nohumans.com.br/slides-sso?next=<aqui mesmo>`
+2. essa rota (no repo `nohumans-work`, `src/app/slides-sso/route.ts`) confere a
    sessão do Supabase **e** a linha em `work.profiles` com `active = true` — a
    mesma regra do `requireProfile` —, cunha um **JWT de 60s** (HS256,
    `SLIDES_SSO_SECRET`) e devolve a pessoa para `/__sso`
 3. o `/__sso` valida assinatura, `aud` e `exp`, emite o cookie `nh_slide`
    (2h, assinado com o mesmo segredo) e manda para o caminho pedido
 
+> A rota fica em `/slides-sso`, **não** em `/auth/*`: o `updateSession` do work
+> desvia qualquer `/auth/*` de usuário logado para `/dashboard`, e aqui o
+> usuário logado é justamente quem precisa passar.
+
 | Peça | Onde | O que faz |
 |---|---|---|
 | `middleware.ts` | este repo | exige o cookie; sem ele inicia o handshake. **Falha fechado** (503) sem segredo. |
-| `src/app/auth/slides/route.ts` | `nohumans-work` | a fonte de verdade: sessão + perfil ativo → token de 60s |
+| `src/app/slides-sso/route.ts` | `nohumans-work` | a fonte de verdade: sessão + perfil ativo → token de 60s |
 | `SLIDES_SSO_SECRET` | env dos **dois** projetos Vercel | segredo compartilhado HS256 (64 hex) |
 | cookie `nh_slide` | slides | JWT de sessão (2h), `HttpOnly; Secure; SameSite=Lax` |
 | `nohumans/check-sso.cjs` | este repo | smoke test dos quatro caminhos, sem navegador |

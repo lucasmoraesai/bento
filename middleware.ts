@@ -3,7 +3,7 @@
  *
  * O deck não tem login próprio. O fluxo é um handshake de três passos:
  *
- *   1. sem cookie → 302 para https://work.nohumans.com.br/auth/slides?next=<aqui>
+ *   1. sem cookie → 302 para https://work.nohumans.com.br/slides-sso?next=<aqui>
  *   2. a rota do work confere a sessão do Supabase E a linha em `work.profiles`
  *      (perfil ativo — a fonte de verdade de acesso do work), cunha um JWT de
  *      60s assinado com SLIDES_SSO_SECRET e devolve a pessoa para /__sso
@@ -24,7 +24,7 @@ import { createHmac, timingSafeEqual } from 'node:crypto'
 
 const COOKIE_NAME = 'nh_slide'
 const SSO_PATH = '/__sso'
-const WORK_SSO = 'https://work.nohumans.com.br/auth/slides'
+const WORK_SSO = 'https://work.nohumans.com.br/slides-sso'
 const SITE = 'slides.nohumans.com.br'
 /** How long this site trusts a completed handshake. Short enough that a work
  *  logout effectively ends access; long enough to be invisible. */
