@@ -7,13 +7,21 @@ e publicado como **nohumans slide** em **https://slides.nohumans.com.br**.
 ## Identidade: nohumans slide
 
 O código é o upstream; a identidade (nome, marca, cores da marca) foi trocada
-para a da nohumans. O que mudou e onde:
+para a da nohumans. **A marca é a do próprio site** — `https://agenciadeia.tech/logo.svg`:
+quadrado preto arredondado com um anel tracejado `#ededed` (viewBox 32, `r=10`,
+`stroke-width 1.5`, `dasharray "52 10"`, `rotate(-40)`). Ela aparece inline (sem
+requisição externa) no favicon, no splash, na barra superior, no Sobre, na tela
+de acesso e no deck — a mesma geometria, em `currentColor` onde o fundo é claro.
+
+O que mudou e onde:
 
 | Superfície | Arquivo | O que é agora |
 |---|---|---|
-| `<title>`, `meta generator`, favicon | `slides/index.html` | `nohumans slide`, `nohumans-slides`, marca em ciano/magenta/lima sobre preto |
-| Splash de boot | `slides/index.html` | wordmark `nohumans slide` + tiles da marca |
-| Wordmark da barra superior e do About | `slides/src/editor/editor.ts` | `nohumans slide`, marca nova, links para o site e para este repo |
+| `<title>`, `meta generator`, favicon | `slides/index.html` | `nohumans slide`, `nohumans-slides`, favicon = `/logo.svg` do site (quadrado preto + anel tracejado) |
+| Splash de boot | `slides/index.html` | anel tracejado girando + wordmark `nohumans slide` |
+| Wordmark da barra superior e do About | `slides/src/editor/editor.ts` | anel (`currentColor` na barra, `#ededed` no About) + `nohumans slide`; links para o site e para este repo |
+| Tela de acesso | `middleware.ts` | anel + `nohumans slide`, paleta nohumans, pt-BR |
+| Capa e slide final do deck | `nohumans/deck.compact.json` | anel grande com o lockup `nohumans / slide` dentro |
 | Nome do app (título da janela, diálogo de salvar) | `slides/src/main.ts` (`appName`) | `nohumans slide` |
 | Catálogos de idioma | `slides/src/i18n/**` | token `bento/slides` → `nohumans slide` (chave + traduções), `packed.ts` regerado por `scripts/build-i18n.mjs` |
 | Deck de demonstração | `slides/src/starterdeck.ts` | título, kicker do capítulo 1 e CTA final com a marca nova |
