@@ -1,0 +1,10 @@
+{
+  "name": "nohumans-slide-deploy",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Deploy shell for nohumans slide — the password gate (middleware.ts) runs in front of the static shell built from slides/.",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/functions": "^2.2.13"
+  }
+}

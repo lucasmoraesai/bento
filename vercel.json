@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "cd slides && npm ci --no-audit --no-fund",
+  "installCommand": "npm ci --no-audit --no-fund && cd slides && npm ci --no-audit --no-fund",
   "buildCommand": "cd slides && npx tsc -b && SINGLEFILE=1 npx vite build --outDir dist-single",
   "outputDirectory": "slides/dist-single",
   "cleanUrls": true,
