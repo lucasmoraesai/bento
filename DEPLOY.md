@@ -70,56 +70,65 @@ e as duas infos que restam são esperadas: as chaves de sessão removidas na
 gravação e a fonte Instrument Sans, que é a face embutida no shell e por isso é
 declarada em `fonts` em vez de carregar bytes.
 
-## Acesso: login e senha
+## Acesso: SSO do work
 
-O site inteiro fica atrás de uma senha. A Vercel **não vende** Password
-Protection no plano Hobby (é add-on de Pro/Enterprise), então o gate é feito em
-casa: `middleware.ts` na raiz, usando **Vercel Routing Middleware** — ele roda
-antes do shell estático, em toda rota.
+Só entra quem está logado em **work.nohumans.com.br**. O deck não tem senha nem
+login próprio: quem decide é a sessão do work.
 
-| Peça | O que faz |
-|---|---|
-| `middleware.ts` | exige cookie assinado; sem ele devolve a tela de acesso (401). POST em `/__unlock` confere a senha e grava o cookie (303). |
-| `DEPLOY_GATE_PASSWORD_HASH` | env var **encriptada** no projeto Vercel (`production`, `preview`, `development`): `s2:<salt>:<hex>`, scrypt N=16384 r=8 p=1. A senha em texto puro não existe em lugar nenhum do repo. |
-| `nohumans/hash-password.mjs` | gera o hash a partir da senha digitada no STDIN (nunca em argv, para não ficar no histórico). |
-| cookie `nh_slide` | HMAC do hash, `HttpOnly; Secure; SameSite=Lax`, 1 ano — "entra uma vez, fica". Trocar a senha invalida os cookies emitidos. |
-| `nohumans/check-gate.cjs` | smoke test: abre a URL, prova que a tela de acesso vem antes, envia a senha e prova que o deck vem depois. |
+O handshake tem três pernas e nenhuma leitura de banco do lado do deck:
+
+1. sem cookie → `middleware.ts` manda o browser para
+   `https://work.nohumans.com.br/auth/slides?next=<aqui mesmo>`
+2. essa rota (no repo `nohumans-work`, `src/app/auth/slides/route.ts`) confere a
+   sessão do Supabase **e** a linha em `work.profiles` com `active = true` — a
+   mesma regra do `requireProfile` —, cunha um **JWT de 60s** (HS256,
+   `SLIDES_SSO_SECRET`) e devolve a pessoa para `/__sso`
+3. o `/__sso` valida assinatura, `aud` e `exp`, emite o cookie `nh_slide`
+   (2h, assinado com o mesmo segredo) e manda para o caminho pedido
+
+| Peça | Onde | O que faz |
+|---|---|---|
+| `middleware.ts` | este repo | exige o cookie; sem ele inicia o handshake. **Falha fechado** (503) sem segredo. |
+| `src/app/auth/slides/route.ts` | `nohumans-work` | a fonte de verdade: sessão + perfil ativo → token de 60s |
+| `SLIDES_SSO_SECRET` | env dos **dois** projetos Vercel | segredo compartilhado HS256 (64 hex) |
+| cookie `nh_slide` | slides | JWT de sessão (2h), `HttpOnly; Secure; SameSite=Lax` |
+| `nohumans/check-sso.cjs` | este repo | smoke test dos quatro caminhos, sem navegador |
 
 Decisões que valem saber:
 
-- **Tudo é gated**, inclusive o HTML inteiro — não há isenção para `.js/.css`
-  (num site estático o conteúdo *é* o bundle, então isentar asset seria vazar o
-  deck). O único caminho liberado é `/favicon.ico`.
-- **Falha fechado**: sem env var ou com hash malformado, o site responde **503**
-  em vez de abrir. Um segredo ausente não pode publicar o deck.
-- **Sem cache**: as respostas do gate saem com `no-store`, e o shell autenticado
-  com `Cache-Control: private`.
-- **O que isto NÃO é**: senha compartilhada é trava de conveniência, não
-  controle de acesso. Não tem usuário por pessoa, nem log de quem entrou, nem
-  limite de tentativas. Para login individual de verdade (contas, papéis,
-  revogação por pessoa), o caminho é Clerk/Auth.js ou Vercel Authentication —
-  nesse caso este arquivo sai.
+- **Revogação em 2h**: deslogar do work não derruba o cookie na hora — ele dura
+  2h e, ao expirar, o handshake roda de novo e a pessoa para no login do work.
+  Janela menor = `SESSION_TTL` no `middleware.ts`.
+- **Tudo é gated**, inclusive o HTML inteiro — num site estático o conteúdo *é* o
+  bundle, então isentar asset seria vazar o deck. Só `/favicon.ico` escapa.
+- **Sem senha**: o gate por senha (`/__unlock` + `DEPLOY_GATE_PASSWORD_HASH`)
+  saiu. Acesso de emergência sem o work exigiria reintroduzir um caminho de
+  senha no middleware.
+- **App switcher**: o Slides aparece ao lado de Calendar e Site
+  (`src/components/layout/app-switcher.tsx`, no repo `nohumans-work`).
 
-### Trocar a senha
+### Trocar o segredo
 
-```sh
-node nohumans/hash-password.mjs        # digita a senha; imprime s2:<salt>:<hex>
-```
-
-Cole o hash em Vercel → projeto `bento` → Settings → Environment Variables
-(`DEPLOY_GATE_PASSWORD_HASH`, Production + Preview + Development) e **redeploy**:
-mudança de env vale para builds novos, então até o redeploy o deployment no ar
-continua aceitando a senha antiga. Ou pela API/CLI:
+Gere 64 hex, atualize `SLIDES_SSO_SECRET` nos **dois** projetos e redeploy dos
+dois. Trocar só de um lado fecha o site — que é o comportamento certo.
 
 ```sh
-printf '%s' 's2:...' | vercel env update DEPLOY_GATE_PASSWORD_HASH production
-vercel --prod
+node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
 ```
+
+### Testar sem navegador
+
+```sh
+SLIDES_SSO_SECRET=<segredo> node nohumans/check-sso.cjs https://slides.nohumans.com.br
+```
+
+Prova: sem cookie → 302 para o work; token válido → 303 + cookie; com cookie →
+200 e o shell; token forjado → volta para o work.
 
 ### Desligar o gate
 
 Apague `middleware.ts`, a dependência `@vercel/functions` do `package.json`
-raiz, e o `DEPLOY_GATE_PASSWORD_HASH` do projeto; o build volta a ser só o shell
+raiz e o `SLIDES_SSO_SECRET` do projeto; o build volta a ser só o shell
 estático.
 
 ## Build na Vercel
