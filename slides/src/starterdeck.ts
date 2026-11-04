@@ -313,8 +313,10 @@ const DOTS_PAPER =
 export function starterDoc(): BentoDoc {
   const doc = newDoc()
   // The DECK's title, not the app's — it reads as a document name (window title,
-  // suggested filename), so it carries the product name as people write it.
-  doc.title = 'nohumans slide'
+  // suggested filename). NOT the product name: the window title already ends in
+  // the app name ("<deck> — nohumans slide"), so the product name here would
+  // print it twice in the tab.
+  doc.title = 'Showcase'
   doc.theme.fontFamily = BODY
   doc.theme.accent = PEACH
   // new charts (＋ Chart, table→chart) inherit the deck's midnight-&-peach family
