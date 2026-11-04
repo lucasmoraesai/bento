@@ -93,3 +93,4 @@ home/android/*/build/
 # itself ships none, so anything here is a working copy, not a shared contract.
 .claude/agents
 .claude/commands/team
+.vercel
