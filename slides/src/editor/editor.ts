@@ -15,6 +15,7 @@ import { THEME_CHOICES, setTheme, themeChoice } from '../../../kernel/src/theme.
 import type { InPlaceOutcome } from '../update'
 import { APP_VERSION, applyUpdate, applyUpdateInPlace, autoCheckEnabled, canUpdateInPlace, checkForUpdates, compareVersions, offlineEnabled, sandboxed, setAutoCheck, setOffline } from '../update'
 import { CHART_PRESETS } from '../charts'
+import { toggleCopilot } from '../copilot/panel'
 import { cssColor, renderSlide, renderThumbnail } from '../render'
 import { openExportImagesDialog } from './exportimages'
 import { paletteSignature, resolveThemeRefs } from '../palette'
@@ -422,6 +423,10 @@ export class Editor {
       : t('Save — download an updated copy (⌘S). This browser can’t rewrite the open file.'))
     saveB.appendChild(this.dirtyDot) // the amber unsaved-changes dot lives ON Save
     const pdfB = btn(ICONS.pdf, '', () => this.exportPdf(), t('Export PDF (print)'))
+    // Copilot: abre o painel que fala com o OmniRoute (src/copilot/). Os textos
+    // do painel são em português direto, sem entrar no catálogo de i18n.
+    const copilotB = btn(ICONS.sparkle, 'Copilot', () => toggleCopilot(), 'Copilot — criar e editar o deck com IA (OmniRoute)')
+    copilotB.classList.add('ed-btn-copilot')
     const helpB = btn('<b class="ed-help-q">?</b>', '', () => this.openHelp(), t('Shortcuts & tips (?)'))
     helpB.classList.add('ed-btn-help')
     this.avatarsBox = div('ed-avatars')
@@ -434,7 +439,7 @@ export class Editor {
     saveGroup.append(saveB, this.saveDropdown())
     const shareD = this.shareDropdown()
     const langD = this.languageDropdown()
-    actions.append(pdfB, this.avatarsBox, shareD, saveGroup, langD, helpB)
+    actions.append(pdfB, copilotB, this.avatarsBox, shareD, saveGroup, langD, helpB)
 
     // Phone chrome: two menus that stay EMPTY on a wide screen. Nothing is
     // duplicated — applyPhoneChrome moves the real buttons in and out, so every

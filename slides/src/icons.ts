@@ -56,6 +56,8 @@ export const ICONS = {
   arrow: svg('<line x1="3" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/>'),
   arrow2: svg('<line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/><polyline points="11 6 5 12 11 18"/>'),
   line: svg('<line x1="4" y1="19" x2="20" y2="5"/>'),
+  // copilot: the "sparkle" that means "AI" everywhere else
+  sparkle: svg('<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/>'),
 } as const
 
 export type IconName = keyof typeof ICONS
